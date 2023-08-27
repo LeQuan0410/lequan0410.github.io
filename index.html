@@ -16,9 +16,6 @@
     body {
       font-family: "Poppins", sans-serif;
     }
-    
-    /* ///////////..utility classes../////////// */
-    
     .container {
       max-width: 1200px;
       width: 90%;
@@ -46,11 +43,6 @@
       background: #117964;
       transition: background 0.3s ease-in-out;
     }
-    
-    /* ............/navbar/............ *
-    
-    /* desktop mode............/// */
-    
     .navbar input[type="checkbox"],
     .navbar .hamburger-lines {
       display: none;
@@ -102,10 +94,7 @@
       order: 1;
       font-size: 2.3rem;
       margin-bottom: 0.5rem;
-    }
-    
-    /* ............//// Showcase styling ////......... */
-    
+    } 
     .showcase-area {
       height: 50vh;
       background: linear-gradient(
@@ -132,9 +121,6 @@
       text-transform: uppercase;
       margin-top: 1.5em;
     }
-    
-    /* ......//about us//...... */
-    
     #about {
       padding: 50px 0;
       background: #f5f5f7;
@@ -195,9 +181,6 @@
       object-fit: cover;
       object-position: right;
     }
-    
-    /* ..........////Food category///........... */
-    
     #food {
       padding: 5rem 0 10rem 0;
     }
@@ -276,9 +259,6 @@
       opacity: 1;
       top: 40%;
     }
-    
-    /* .........../Food Menu/............ */
-    
     .food-menu-heading {
       text-align: center;
       font-size: 3.4rem;
@@ -327,10 +307,7 @@
     .food-description .food-price {
       color: #117964;
       font-weight: 700;
-    }
-    
-    /* ........./ Testimonial /.......... */
-    
+    } 
     #testimonials {
       padding: 5rem 0;
       background: rgba(243, 243, 243);
@@ -373,9 +350,6 @@
       border-radius: 50%;
       margin: auto;
     }
-    
-    /* ........ Contact Us........... */
-    
     #contact {
       padding: 5rem 0;
       background: rgb(226, 226, 226);
@@ -448,9 +422,6 @@
       color: #fff;
       background: rgb(65, 65, 65);
     }
-    
-    /* ......../ media query /.......... */
-    
     @media (max-width: 768px) {
       .navbar {
         opacity: 0.95;
@@ -555,9 +526,6 @@
       .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
         transform: rotate(-35deg);
       }
-    
-      /* ......./ food /......... */
-    
       .food-container {
         flex-direction: column;
         align-items: stretch;
@@ -763,38 +731,26 @@
       </div>
     </section>
     <footer id="footer">
-      <h2>LeQuan &copy; all rights reserved</h2>
+      <h2>Web by LeQuan0410</h2>
     </footer>
   </body>
-  <!-- 
-    .................../ JS Code for smooth scrolling /...................... -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      // Add smooth scrolling to all links
       $("a").on("click", function (event) {
-        // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
-          // Prevent default anchor click behavior
           event.preventDefault();
-
-          // Store hash
           var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
           $("html, body").animate(
             {
               scrollTop: $(hash).offset().top,
             },
             800,
             function () {
-              // Add hash (#) to URL when done scrolling (default click behavior)
               window.location.hash = hash;
             }
           );
-        } // End if
+        }
       });
     });
   </script>
