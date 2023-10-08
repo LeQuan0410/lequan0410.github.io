@@ -3,6 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <title>Snapdrop Demo</title>
+   <script>// Lấy danh sách các thiết bị được kết nối với wifi
+function getDevices() {
+  var devices = navigator.getNetworks();
+
+  // Duyệt qua danh sách các thiết bị
+  for (var i = 0; i < devices.length; i++) {
+    // Kiểm tra xem thiết bị có đang kết nối với trang web hay không
+    if (devices[i].type === "wifi" && devices[i].ssid === "Tên wifi của bạn") {
+      // Thêm thiết bị vào danh sách thiết bị có thể gửi file
+      var device = devices[i];
+      var li = document.createElement("li");
+      li.textContent = device.name;
+      li.id = device.id;
+      list.appendChild(li);
+    }
+  }
+}
+
+// Tải lên file
+function uploadFile(event) {
+  // Lấy file từ form
+  var file = event.target.files[0];
+
+  // Gửi file đến các thiết bị khác
+  var data = new FormData();
+  data.append("file", file);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/upload", true);
+  xhr.send(data);
+}
+
+// Gửi file
+function sendFile() {
+  // Lấy thiết bị được chọn
+  var deviceId = document.getElementById("devices").querySelector("li.active").id;
+
+  // Lấy file từ form
+  var file = document.getElementById("file").files[0];
+
+  // Gửi file đến thiết bị được chọn
+  var data = new FormData();
+  data.append("file", file);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/send", true);
+  xhr.setRequestHeader("X-Device-Id", deviceId);
+  xhr.send(data);
+}
+
+// Sự kiện khi file được chọn
+document.getElementById("file").addEventListener("change", uploadFile);
+
+// Sự kiện khi thiết bị được chọn
+document.getElementById("devices").addEventListener("click", function(event) {
+  var li = event.target;
+  li.classList.toggle("active");
+});
+
+// Sự kiện khi nút "Gửi" được nhấn
+document.getElementById("send").addEventListener("click", sendFile);
+
+// Lấy danh sách các thiết bị khi trang web được tải
+window.onload = getDevices;
+   </script>
+  <style>body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+</style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
