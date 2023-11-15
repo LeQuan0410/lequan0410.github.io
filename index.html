@@ -4,51 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .table {
-            width: 50px;
-            height: 50px;
-            margin: 5px;
-            display: inline-block;
-            cursor: pointer;
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
-        .occupied {
-            background-color: red;
-        }
-
-        .available {
-            background-color: green;
+        .checkbox-container {
+            margin-top: 10px;
         }
     </style>
-    <title>Bàn Ăn</title>
+    <title>Quản Lý Bàn Ăn</title>
 </head>
 <body>
 
-<script>
-    function toggleTable(tableId) {
-        var table = document.getElementById(tableId);
-        if (table.classList.contains('occupied')) {
-            table.classList.remove('occupied');
-            table.classList.add('available');
-        } else {
-            table.classList.remove('available');
-            table.classList.add('occupied');
-        }
-    }
+<h1>Danh Sách Bàn Ăn</h1>
 
-    // Tạo 23 bàn mẫu sau khi trang web đã được tải
-    document.addEventListener("DOMContentLoaded", function() {
-        for (var i = 1; i <= 23; i++) {
-            var table = document.createElement('div');
-            table.id = 'table' + i;
-            table.className = 'table';
-            table.onclick = function() {
-                toggleTable(this.id);
-            };
-            document.body.appendChild(table);
-        }
-    });
-</script>
+<div class="table-container">
+    <div class="table">
+        <p>Bàn 1</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied1" />
+            <label for="occupied1">Đã Vào</label>
+            <input type="checkbox" id="closed1" />
+            <label for="closed1">Đã Chốt</label>
+        </div>
+    </div>
+
+    <div class="table">
+        <p>Bàn 2</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 3</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 4</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 5</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 6</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 7</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 8</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 9</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 10</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 11</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 12</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 13</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 14</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 15</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 16</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 17</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 18</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 19</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 20</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 21</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+        <div class="table">
+        <p>Bàn 22</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied2" />
+            <label for="occupied2">Đã Vào</label>
+            <input type="checkbox" id="closed2" />
+            <label for="closed2">Đã Chốt</label>
+        </div>
+    </div>
+    <div class="table">
+        <p>Bàn 23</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="occupied23" />
+            <label for="occupied23">Đã Vào</label>
+            <input type="checkbox" id="closed23" />
+            <label for="closed23">Đã Chốt</label>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
