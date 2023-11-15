@@ -36,10 +36,18 @@
         }
     }
 
-    // Tạo 23 bàn mẫu
-    for (var i = 1; i <= 23; i++) {
-        document.write("<div id='table" + i + "' class='table' onclick='toggleTable(\"table" + i + "\")'></div>");
-    }
+    // Tạo 23 bàn mẫu sau khi trang web đã được tải
+    document.addEventListener("DOMContentLoaded", function() {
+        for (var i = 1; i <= 23; i++) {
+            var table = document.createElement('div');
+            table.id = 'table' + i;
+            table.className = 'table';
+            table.onclick = function() {
+                toggleTable(this.id);
+            };
+            document.body.appendChild(table);
+        }
+    });
 </script>
 
 </body>
